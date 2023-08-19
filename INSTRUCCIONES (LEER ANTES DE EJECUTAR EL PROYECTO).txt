@@ -1,0 +1,22 @@
+INSTRUCCIONES:
+
+(1) Descomprimir la carpeta 'Trabajo Final (Proyecto)' y ubicarla en el directorio raíz de Windows (de preferencia).
+(2) Descomprimir la carpeta 'Date Stamp Font.rar' e instalar las 4 fuentes que vienen en la carpeta.
+(3) Abrir VS Code desde la ubicación en donde ubicamos la carpeta 'Trabajo Final (Proyecto)' y restauramos la carpeta 'Calculadora de Operaciones'.
+(4) Una vez restaurada la carpeta dentro de main.py presionamos Ctrl+F y buscamos 'ventana.iconbitmap' y 'ventana_nueva.iconbitmap' en donde se deberá de cambiar la ruta del .ico (en este caso si la la carpeta se ubicó en el directorio raíz de Windows únicamente cambiar G: por C: ó el nombre de la unidad que tiene el disco local).
+(5) Antes de ejecutar el main.py debemos asegurarnos de tener instalada la versión 3.11.4 de Python, además de las librerías PLY y Tkinter, de no ser así para instalar la librería PLY y la librería Tkinter en la terminal del VS Code ingresamos los siguientes comandos (uno a la vez):
+
+	• pip install ply
+	• pip install tk
+
+(6) Una vez completados todos los pasos anteriores podemos EJECUTAR la Calculadora de Operaciones.
+----------------------------------------------------------------------------------------------------------------
+
+Trabajo realizado por el equipo Delta Nova conformado por:
+
+• Kenet Francisco Orellana Meza		20141011708
+• Marvin Dionicio Martínez Aguilera	20161004203
+• Luis Enrique Verde Sánchez		20171031756
+
+----------------------------------------------------------------------------------------------------------------
+© Derechos Reservados 2023 | Prohibida su copia, distribución parcial o total sin la autorización de Delta Nova.
