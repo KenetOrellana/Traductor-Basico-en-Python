@@ -1,0 +1,311 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    IGNORAR
+
+Grammar
+
+Rule 0     S' -> calculo
+Rule 1     calculo -> expresion
+Rule 2     calculo -> vacio
+Rule 3     expresion -> ENTERO
+Rule 4     expresion -> DECIMAL
+Rule 5     expresion -> expresion POR expresion
+Rule 6     expresion -> expresion ENTRE expresion
+Rule 7     expresion -> expresion MAS expresion
+Rule 8     expresion -> expresion MENOS expresion
+Rule 9     expresion -> PARENT_A expresion PARENT_C
+Rule 10    vacio -> <empty>
+
+Terminals, with rules where they appear
+
+DECIMAL              : 4
+ENTERO               : 3
+ENTRE                : 6
+IGNORAR              : 
+MAS                  : 7
+MENOS                : 8
+PARENT_A             : 9
+PARENT_C             : 9
+POR                  : 5
+error                : 
+
+Nonterminals, with rules where they appear
+
+calculo              : 0
+expresion            : 1 5 5 6 6 7 7 8 8 9
+vacio                : 2
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . calculo
+    (1) calculo -> . expresion
+    (2) calculo -> . vacio
+    (3) expresion -> . ENTERO
+    (4) expresion -> . DECIMAL
+    (5) expresion -> . expresion POR expresion
+    (6) expresion -> . expresion ENTRE expresion
+    (7) expresion -> . expresion MAS expresion
+    (8) expresion -> . expresion MENOS expresion
+    (9) expresion -> . PARENT_A expresion PARENT_C
+    (10) vacio -> .
+
+    ENTERO          shift and go to state 4
+    DECIMAL         shift and go to state 5
+    PARENT_A        shift and go to state 6
+    $end            reduce using rule 10 (vacio -> .)
+
+    calculo                        shift and go to state 1
+    expresion                      shift and go to state 2
+    vacio                          shift and go to state 3
+
+state 1
+
+    (0) S' -> calculo .
+
+
+
+state 2
+
+    (1) calculo -> expresion .
+    (5) expresion -> expresion . POR expresion
+    (6) expresion -> expresion . ENTRE expresion
+    (7) expresion -> expresion . MAS expresion
+    (8) expresion -> expresion . MENOS expresion
+
+    $end            reduce using rule 1 (calculo -> expresion .)
+    POR             shift and go to state 7
+    ENTRE           shift and go to state 8
+    MAS             shift and go to state 9
+    MENOS           shift and go to state 10
+
+
+state 3
+
+    (2) calculo -> vacio .
+
+    $end            reduce using rule 2 (calculo -> vacio .)
+
+
+state 4
+
+    (3) expresion -> ENTERO .
+
+    POR             reduce using rule 3 (expresion -> ENTERO .)
+    ENTRE           reduce using rule 3 (expresion -> ENTERO .)
+    MAS             reduce using rule 3 (expresion -> ENTERO .)
+    MENOS           reduce using rule 3 (expresion -> ENTERO .)
+    $end            reduce using rule 3 (expresion -> ENTERO .)
+    PARENT_C        reduce using rule 3 (expresion -> ENTERO .)
+
+
+state 5
+
+    (4) expresion -> DECIMAL .
+
+    POR             reduce using rule 4 (expresion -> DECIMAL .)
+    ENTRE           reduce using rule 4 (expresion -> DECIMAL .)
+    MAS             reduce using rule 4 (expresion -> DECIMAL .)
+    MENOS           reduce using rule 4 (expresion -> DECIMAL .)
+    $end            reduce using rule 4 (expresion -> DECIMAL .)
+    PARENT_C        reduce using rule 4 (expresion -> DECIMAL .)
+
+
+state 6
+
+    (9) expresion -> PARENT_A . expresion PARENT_C
+    (3) expresion -> . ENTERO
+    (4) expresion -> . DECIMAL
+    (5) expresion -> . expresion POR expresion
+    (6) expresion -> . expresion ENTRE expresion
+    (7) expresion -> . expresion MAS expresion
+    (8) expresion -> . expresion MENOS expresion
+    (9) expresion -> . PARENT_A expresion PARENT_C
+
+    ENTERO          shift and go to state 4
+    DECIMAL         shift and go to state 5
+    PARENT_A        shift and go to state 6
+
+    expresion                      shift and go to state 11
+
+state 7
+
+    (5) expresion -> expresion POR . expresion
+    (3) expresion -> . ENTERO
+    (4) expresion -> . DECIMAL
+    (5) expresion -> . expresion POR expresion
+    (6) expresion -> . expresion ENTRE expresion
+    (7) expresion -> . expresion MAS expresion
+    (8) expresion -> . expresion MENOS expresion
+    (9) expresion -> . PARENT_A expresion PARENT_C
+
+    ENTERO          shift and go to state 4
+    DECIMAL         shift and go to state 5
+    PARENT_A        shift and go to state 6
+
+    expresion                      shift and go to state 12
+
+state 8
+
+    (6) expresion -> expresion ENTRE . expresion
+    (3) expresion -> . ENTERO
+    (4) expresion -> . DECIMAL
+    (5) expresion -> . expresion POR expresion
+    (6) expresion -> . expresion ENTRE expresion
+    (7) expresion -> . expresion MAS expresion
+    (8) expresion -> . expresion MENOS expresion
+    (9) expresion -> . PARENT_A expresion PARENT_C
+
+    ENTERO          shift and go to state 4
+    DECIMAL         shift and go to state 5
+    PARENT_A        shift and go to state 6
+
+    expresion                      shift and go to state 13
+
+state 9
+
+    (7) expresion -> expresion MAS . expresion
+    (3) expresion -> . ENTERO
+    (4) expresion -> . DECIMAL
+    (5) expresion -> . expresion POR expresion
+    (6) expresion -> . expresion ENTRE expresion
+    (7) expresion -> . expresion MAS expresion
+    (8) expresion -> . expresion MENOS expresion
+    (9) expresion -> . PARENT_A expresion PARENT_C
+
+    ENTERO          shift and go to state 4
+    DECIMAL         shift and go to state 5
+    PARENT_A        shift and go to state 6
+
+    expresion                      shift and go to state 14
+
+state 10
+
+    (8) expresion -> expresion MENOS . expresion
+    (3) expresion -> . ENTERO
+    (4) expresion -> . DECIMAL
+    (5) expresion -> . expresion POR expresion
+    (6) expresion -> . expresion ENTRE expresion
+    (7) expresion -> . expresion MAS expresion
+    (8) expresion -> . expresion MENOS expresion
+    (9) expresion -> . PARENT_A expresion PARENT_C
+
+    ENTERO          shift and go to state 4
+    DECIMAL         shift and go to state 5
+    PARENT_A        shift and go to state 6
+
+    expresion                      shift and go to state 15
+
+state 11
+
+    (9) expresion -> PARENT_A expresion . PARENT_C
+    (5) expresion -> expresion . POR expresion
+    (6) expresion -> expresion . ENTRE expresion
+    (7) expresion -> expresion . MAS expresion
+    (8) expresion -> expresion . MENOS expresion
+
+    PARENT_C        shift and go to state 16
+    POR             shift and go to state 7
+    ENTRE           shift and go to state 8
+    MAS             shift and go to state 9
+    MENOS           shift and go to state 10
+
+
+state 12
+
+    (5) expresion -> expresion POR expresion .
+    (5) expresion -> expresion . POR expresion
+    (6) expresion -> expresion . ENTRE expresion
+    (7) expresion -> expresion . MAS expresion
+    (8) expresion -> expresion . MENOS expresion
+
+    POR             reduce using rule 5 (expresion -> expresion POR expresion .)
+    ENTRE           reduce using rule 5 (expresion -> expresion POR expresion .)
+    MAS             reduce using rule 5 (expresion -> expresion POR expresion .)
+    MENOS           reduce using rule 5 (expresion -> expresion POR expresion .)
+    $end            reduce using rule 5 (expresion -> expresion POR expresion .)
+    PARENT_C        reduce using rule 5 (expresion -> expresion POR expresion .)
+
+  ! POR             [ shift and go to state 7 ]
+  ! ENTRE           [ shift and go to state 8 ]
+  ! MAS             [ shift and go to state 9 ]
+  ! MENOS           [ shift and go to state 10 ]
+
+
+state 13
+
+    (6) expresion -> expresion ENTRE expresion .
+    (5) expresion -> expresion . POR expresion
+    (6) expresion -> expresion . ENTRE expresion
+    (7) expresion -> expresion . MAS expresion
+    (8) expresion -> expresion . MENOS expresion
+
+    POR             reduce using rule 6 (expresion -> expresion ENTRE expresion .)
+    ENTRE           reduce using rule 6 (expresion -> expresion ENTRE expresion .)
+    MAS             reduce using rule 6 (expresion -> expresion ENTRE expresion .)
+    MENOS           reduce using rule 6 (expresion -> expresion ENTRE expresion .)
+    $end            reduce using rule 6 (expresion -> expresion ENTRE expresion .)
+    PARENT_C        reduce using rule 6 (expresion -> expresion ENTRE expresion .)
+
+  ! POR             [ shift and go to state 7 ]
+  ! ENTRE           [ shift and go to state 8 ]
+  ! MAS             [ shift and go to state 9 ]
+  ! MENOS           [ shift and go to state 10 ]
+
+
+state 14
+
+    (7) expresion -> expresion MAS expresion .
+    (5) expresion -> expresion . POR expresion
+    (6) expresion -> expresion . ENTRE expresion
+    (7) expresion -> expresion . MAS expresion
+    (8) expresion -> expresion . MENOS expresion
+
+    MAS             reduce using rule 7 (expresion -> expresion MAS expresion .)
+    MENOS           reduce using rule 7 (expresion -> expresion MAS expresion .)
+    $end            reduce using rule 7 (expresion -> expresion MAS expresion .)
+    PARENT_C        reduce using rule 7 (expresion -> expresion MAS expresion .)
+    POR             shift and go to state 7
+    ENTRE           shift and go to state 8
+
+  ! POR             [ reduce using rule 7 (expresion -> expresion MAS expresion .) ]
+  ! ENTRE           [ reduce using rule 7 (expresion -> expresion MAS expresion .) ]
+  ! MAS             [ shift and go to state 9 ]
+  ! MENOS           [ shift and go to state 10 ]
+
+
+state 15
+
+    (8) expresion -> expresion MENOS expresion .
+    (5) expresion -> expresion . POR expresion
+    (6) expresion -> expresion . ENTRE expresion
+    (7) expresion -> expresion . MAS expresion
+    (8) expresion -> expresion . MENOS expresion
+
+    MAS             reduce using rule 8 (expresion -> expresion MENOS expresion .)
+    MENOS           reduce using rule 8 (expresion -> expresion MENOS expresion .)
+    $end            reduce using rule 8 (expresion -> expresion MENOS expresion .)
+    PARENT_C        reduce using rule 8 (expresion -> expresion MENOS expresion .)
+    POR             shift and go to state 7
+    ENTRE           shift and go to state 8
+
+  ! POR             [ reduce using rule 8 (expresion -> expresion MENOS expresion .) ]
+  ! ENTRE           [ reduce using rule 8 (expresion -> expresion MENOS expresion .) ]
+  ! MAS             [ shift and go to state 9 ]
+  ! MENOS           [ shift and go to state 10 ]
+
+
+state 16
+
+    (9) expresion -> PARENT_A expresion PARENT_C .
+
+    POR             reduce using rule 9 (expresion -> PARENT_A expresion PARENT_C .)
+    ENTRE           reduce using rule 9 (expresion -> PARENT_A expresion PARENT_C .)
+    MAS             reduce using rule 9 (expresion -> PARENT_A expresion PARENT_C .)
+    MENOS           reduce using rule 9 (expresion -> PARENT_A expresion PARENT_C .)
+    $end            reduce using rule 9 (expresion -> PARENT_A expresion PARENT_C .)
+    PARENT_C        reduce using rule 9 (expresion -> PARENT_A expresion PARENT_C .)
+
